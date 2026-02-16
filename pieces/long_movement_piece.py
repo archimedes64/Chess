@@ -61,11 +61,11 @@ class LongMovementPiece(Piece):
             while position in game_state.board:
                 piece = game_state.board[position].piece
 
-                if piece is None:
-                    if not hard_los_blocked:
-                        line_of_sight.hard_los.add(position)
-                    line_of_sight.full_los.add(position)
+                if not hard_los_blocked:
+                    line_of_sight.hard_los.add(position)
+                line_of_sight.full_los.add(position)
 
+                if piece is None:
                     position = Position(position.x + x_offset, position.y + y_offset)
                     continue
 
