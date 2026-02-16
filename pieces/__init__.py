@@ -20,7 +20,7 @@ class PieceType(Enum):
 
 
 @dataclass
-class MoveInfo:  # any extra information about the move so the game can handle the stupid extra rules
+class MoveInfo:  # any extra information about the move so the game can handle the extra rules
     capture: Union["Piece", None] = None
     is_double_move: bool = False
     is_promotion: bool = False

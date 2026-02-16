@@ -30,7 +30,7 @@ class Pawn(Piece):
 
     def _potential_moves(self, game_state: "GameState") -> Dict[Position, MoveInfo]:
         potential_moves: Dict[Position, MoveInfo] = {}
-        """having each one mutate potential_moves may be better for preformance, but I dont like when functions modify their inputs its gross"""
+        """having each one mutate potential_moves may be better for preformance"""
         potential_moves.update(self._get_potential_vertical_moves(game_state))
         potential_moves.update(self._get_potential_en_pessant(game_state))
         potential_moves.update(self._get_potential_captures(game_state))
